@@ -1,0 +1,13 @@
+## alembic
+
+alembic init
+alembic revision -m 'create user table'
+alembic upgrade (hash_of_revision or head(for latest revision))
+alembic current - return the hash of current applied revision 
+alembic downgrade -1 -  return to previous revision
+alembic upgrade +1 - apply the next revision
+alembic revision --autogenerate -m "msg"
+
+# FastAPI
+
+uvicorn src.main:app --reload
