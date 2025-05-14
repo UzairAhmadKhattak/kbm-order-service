@@ -1,8 +1,8 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field,EmailStr
 
 class UserBase(BaseModel):
     username : str
-    email : str
+    email : EmailStr
     full_name : str
 
 class UserCreate(UserBase):
@@ -13,7 +13,7 @@ class UserCreate(UserBase):
 class UserRead(BaseModel):
     id: int
     full_name: str
-    email: str
+    email: EmailStr
 
     class Config:
         from_attributes = True
