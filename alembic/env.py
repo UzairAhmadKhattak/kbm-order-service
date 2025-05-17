@@ -2,15 +2,13 @@ from logging.config import fileConfig
 
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
-from dotenv import load_dotenv
 from alembic import context
-import os
-from src.models import Base 
+from src.base_model import Base
+from dotenv import dotenv_values
 
-load_dotenv()
+env = dotenv_values('.env')
 
-db_url = f"{os.getenv('DRIVER')}://{os.getenv('USERNAME')}:{os.getenv('PASSWORD')}@{os.getenv('HOST')}/{os.getenv('DATABASE')}"
-
+db_url = f"{env['DRIVER']}://{env['USERNAME']}:{env['PASSWORD']}@{env['HOST']}/{env['DATABASE']}"
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
