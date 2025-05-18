@@ -6,11 +6,14 @@ name = "pypi"
 [packages]
 alembic = "*"
 psycopg2 = "*"
-sqlalchemy = "*"
 fastapi = {extras = ["standard"], version = "*"}
 typer = {extras = ["all"], version = "*"}
 passlib = {extras = ["bcrypt"], version = "*"}
 uvicorn = "*"
+sqlalchemy = {extras = ["asyncio"], version = "*"}
+asyncpg = "*"
+boto3 = "*"
+python-multipart = "*"
 
 [dev-packages]
 

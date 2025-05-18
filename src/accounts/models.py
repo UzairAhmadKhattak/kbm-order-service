@@ -1,5 +1,10 @@
-from sqlalchemy import Column, Integer, String, ForeignKey,Date,Boolean
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import (Column,
+                        Integer,
+                        String,
+                        ForeignKey,
+                        Date,
+                        Boolean,
+                        Text)
 from sqlalchemy.orm import relationship
 from src.base_model import Base
 
@@ -9,9 +14,9 @@ class User(Base):
     __tablename__ = 'user'
 
     id = Column(Integer, primary_key=True, index=True)
-    username = Column(String, unique=True, index=True)
-    email = Column(String, unique=True)
-    full_name = Column(String)
+    username = Column(String(20), unique=True, index=True)
+    email = Column(String(20), unique=True)
+    full_name = Column(String(20))
     hashed_password = Column(String)
     is_active = Column(Boolean)
     role_id = Column(Integer, ForeignKey('role.id'))
@@ -25,12 +30,12 @@ class UserInfo(Base):
     
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, ForeignKey('user.id'),unique=True)
-    city = Column(String)
-    address = Column(String)
-    nic_number = Column(String, unique=True)
-    phone_number = Column(String, unique=True)
-    date = Column(Date)
-    pic_url = Column(String)
+    city = Column(String(20))
+    address = Column(Text)
+    nic_number = Column(String(30), unique=True)
+    phone_number = Column(String(30), unique=True)
+    dob = Column(Date)
+    pic_url = Column(Text)
     
     user = relationship("User", back_populates="user_info")
 
@@ -39,8 +44,8 @@ class Role(Base):
     __tablename__ = 'role'
 
     id = Column(Integer, primary_key=True, index=True)
-    name = Column(String, unique=True, index=True)
-    description = Column(String)
+    name = Column(String(20), unique=True, index=True)
+    description = Column(String(20))
 
     users = relationship("User", back_populates="role")
 
@@ -49,9 +54,9 @@ class Vehicle(Base):
     __tablename__ = 'vehicle'
 
     id = Column(Integer, primary_key=True, index=True)
-    number_plate = Column(String, unique=True, index=True)
-    vehicle_type = Column(String)
-    vehicle_doc_url = Column(String)
+    number_plate = Column(String(20), unique=True, index=True)
+    vehicle_type = Column(String(10))
+    vehicle_doc_url = Column(Text)
     user_id = Column(Integer, ForeignKey('user.id'))
     
     user = relationship("User", back_populates="vehicle")

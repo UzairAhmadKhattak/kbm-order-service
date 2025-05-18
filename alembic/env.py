@@ -4,6 +4,7 @@ from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 from alembic import context
 from src.base_model import Base
+from src.accounts.models import *
 from dotenv import dotenv_values
 
 env = dotenv_values('.env')
