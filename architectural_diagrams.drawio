@@ -313,7 +313,7 @@
           <mxGeometry x="730" y="200" width="390" height="360" as="geometry" />
         </mxCell>
         <mxCell id="mTaDSIT27PKTmQS_zxd8-1" value="Internet Gateway" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.internet_gateway;fillColor=#F58534;gradientColor=none;" vertex="1" parent="jOHFHPNlz4tJXmCEWdW9-4">
-          <mxGeometry x="170" y="40" width="69" height="72" as="geometry" />
+          <mxGeometry x="150" y="122" width="69" height="72" as="geometry" />
         </mxCell>
         <mxCell id="GephtK8KoJchM36-7wjF-10" value="ECR" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.ecr_registry;fillColor=#F58534;gradientColor=none;" parent="1" vertex="1">
           <mxGeometry x="90" y="300" width="57" height="60" as="geometry" />
