@@ -313,10 +313,10 @@
           <mxGeometry x="730" y="200" width="390" height="360" as="geometry" />
         </mxCell>
         <mxCell id="GephtK8KoJchM36-7wjF-10" value="ECR" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.ecr_registry;fillColor=#F58534;gradientColor=none;" parent="1" vertex="1">
-          <mxGeometry x="90" y="300" width="57" height="60" as="geometry" />
+          <mxGeometry x="1369.75" y="190" width="57" height="60" as="geometry" />
         </mxCell>
         <mxCell id="GephtK8KoJchM36-7wjF-2" value="API GATEWAY&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.api_gateway;fillColor=#D9A741;gradientColor=none;" parent="1" vertex="1">
-          <mxGeometry x="1360" y="328" width="76.5" height="93" as="geometry" />
+          <mxGeometry x="1369.75" y="450" width="76.5" height="93" as="geometry" />
         </mxCell>
         <mxCell id="GephtK8KoJchM36-7wjF-12" value="NAT&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.vpc_nat_gateway;fillColor=#F58534;gradientColor=none;rotation=0;" parent="1" vertex="1">
           <mxGeometry x="870" y="230" width="69" height="72" as="geometry" />
