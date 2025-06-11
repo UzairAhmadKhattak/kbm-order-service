@@ -12,12 +12,17 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
-
+      
+      - name: Debug Secrets
+        run: |
+          echo "ECR_ACCESS_KEY is set: ${{ secrets.ECR_ACCESS_KEY != '' }}"
+          echo "ECR_SECRET_KEY is set: ${{ secrets.ECR_SECRET_KEY != '' }}"
+          
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          aws-access-key-id: ${{secrets.ecr_access_key}}
-          aws-secret-access-key: ${{secrets.ecr_secret_key}}
+          aws-access-key-id: ${{secrets.ECR_ACCESS_KEY}}
+          aws-secret-access-key: ${{secrets.ECR_SECRET_KEY}}
           aws-region: ap-south-1
 
       - name: Login to Amazon ECR
@@ -32,7 +37,7 @@ jobs:
 
       - name: Build, tag, and push image to ECR
         env:
-          ECR_REPOSITORY: ${{ secrets.ecr_repo_uri}}
+          ECR_REPOSITORY: ${{ secrets.ECR_REPO_URI}}
           IMAGE_TAG: order-service
         run: |
           docker build -t $ECR_REPOSITORY:$IMAGE_TAG .
