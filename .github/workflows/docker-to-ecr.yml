@@ -16,8 +16,8 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          aws-access-key-id: ${{ secrets.ECR_ACCESS_KEY }}
-          aws-secret-access-key: ${{ secrets.ECR_SECRET_KEY }}
+          aws-access-key-id: ${{secrets.ecr_access_key}}
+          aws-secret-access-key: ${{secrets.ecr_secret_key}}
           aws-region: ap-south-1
 
       - name: Login to Amazon ECR
@@ -32,7 +32,7 @@ jobs:
 
       - name: Build, tag, and push image to ECR
         env:
-          ECR_REPOSITORY: ${{ secrets.ECR_REPO_URI }}
+          ECR_REPOSITORY: ${{ secrets.ecr_repo_uri}}
           IMAGE_TAG: order-service
         run: |
           docker build -t $ECR_REPOSITORY:$IMAGE_TAG .
