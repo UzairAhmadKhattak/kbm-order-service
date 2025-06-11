@@ -32,7 +32,7 @@ jobs:
       - name: Delete existing image tag from ECR (if exists)
         run: |
           aws ecr batch-delete-image \
-            --repository-name $(echo ${{ secrets.ECR_REPO_URI }} | awk -F/ '{print $2}') \
+            --repository-name repos/kbm \
             --image-ids imageTag=order-service || echo "Image not found, skipping delete"
 
       - name: Build, tag, and push image to ECR
