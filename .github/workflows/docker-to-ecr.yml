@@ -12,11 +12,6 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
-      
-      - name: Debug Secrets
-        run: |
-          echo "ECR_ACCESS_KEY is set: ${{ secrets.ECR_ACCESS_KEY != '' }}"
-          echo "ECR_SECRET_KEY is set: ${{ secrets.ECR_SECRET_KEY != '' }}"
           
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
