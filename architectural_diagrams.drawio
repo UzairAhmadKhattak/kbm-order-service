@@ -284,7 +284,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="Deployment Architecture" id="ZB3ncixGiXzHuIElh8pF">
-    <mxGraphModel dx="1737" dy="937" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2084" dy="1124" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -319,10 +319,10 @@
           <mxGeometry x="160.5" y="60" width="69" height="72" as="geometry" />
         </mxCell>
         <mxCell id="GephtK8KoJchM36-7wjF-10" value="ECR" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.ecr_registry;fillColor=#F58534;gradientColor=none;" parent="1" vertex="1">
-          <mxGeometry x="1369.75" y="190" width="57" height="60" as="geometry" />
+          <mxGeometry x="1360" y="240" width="57" height="60" as="geometry" />
         </mxCell>
         <mxCell id="GephtK8KoJchM36-7wjF-2" value="API GATEWAY&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.api_gateway;fillColor=#D9A741;gradientColor=none;" parent="1" vertex="1">
-          <mxGeometry x="1369.75" y="450" width="76.5" height="93" as="geometry" />
+          <mxGeometry x="1360" y="880" width="76.5" height="93" as="geometry" />
         </mxCell>
         <mxCell id="mTaDSIT27PKTmQS_zxd8-1" value="Internet Gateway" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.internet_gateway;fillColor=#F58534;gradientColor=none;" parent="1" vertex="1">
           <mxGeometry x="1180" y="560" width="69" height="72" as="geometry" />
