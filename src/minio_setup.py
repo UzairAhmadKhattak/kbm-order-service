@@ -2,9 +2,9 @@
 import boto3
 from botocore.client import Config
 from dotenv import dotenv_values
-import uuid
 from fastapi import UploadFile
 import os
+from botocore.exceptions import ClientError
 
 env = dotenv_values('.env')
 
@@ -25,8 +25,22 @@ s3_client = boto3.client(
 # Ensure bucket exists
 try:
     s3_client.head_bucket(Bucket=AWS_STORAGE_BUCKET_NAME)
-except s3_client.exceptions.ClientError:
-    s3_client.create_bucket(Bucket=AWS_STORAGE_BUCKET_NAME)
+    print(f"Bucket '{AWS_STORAGE_BUCKET_NAME}' already exists and is accessible.")
+except ClientError as e:
+    error_code = e.response['Error']['Code']
+    if error_code == '404':
+        # Bucket does not exist, create it
+        try:
+            s3_client.create_bucket(Bucket=AWS_STORAGE_BUCKET_NAME)
+            print(f"Bucket '{AWS_STORAGE_BUCKET_NAME}' created successfully.")
+        except ClientError as create_error:
+            print(f"Failed to create bucket: {create_error}")
+    elif error_code == '403':
+        # Access denied (e.g., bucket owned by another account or insufficient permissions)
+        print(f"Access denied to bucket '{AWS_STORAGE_BUCKET_NAME}'. Check permissions.")
+    else:
+        # Other errors, including BucketAlreadyOwnedByYou
+        print(f"Error accessing bucket '{AWS_STORAGE_BUCKET_NAME}': {e}")
 
 
 async def save_file_to_minio(file: UploadFile,
