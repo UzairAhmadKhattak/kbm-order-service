@@ -6,10 +6,10 @@ from alembic import context
 from src.base_model import Base
 from src.accounts.models import *
 from dotenv import dotenv_values
+import os
 
-env = dotenv_values('.env')
+db_url = f"{os.environ['DRIVER']}://{os.environ['USERNAME']}:{os.environ['PASSWORD']}@{os.environ['HOST']}/{os.environ['DATABASE']}"
 
-db_url = f"{env['DRIVER']}://{env['USERNAME']}:{env['PASSWORD']}@{env['HOST']}/{env['DATABASE']}"
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config

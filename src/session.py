@@ -2,10 +2,13 @@
 from dotenv import dotenv_values
 from sqlalchemy.ext.asyncio import AsyncSession,create_async_engine,async_sessionmaker
 from sqlalchemy.orm import declarative_base
+import os
 
-env = dotenv_values('.env')
-
-DATABASE_URL = f"{env['DRIVER']}+asyncpg://{env['USERNAME']}:{env['PASSWORD']}@{env['HOST']}/{env['DATABASE']}"
+DATABASE_URL = (
+    f"{os.environ['DRIVER']}+asyncpg://"
+    f"{os.environ['USERNAME']}:{os.environ['PASSWORD']}@"
+    f"{os.environ['HOST']}/{os.environ['DATABASE']}"
+)
 
 engine = create_async_engine(DATABASE_URL)
 
