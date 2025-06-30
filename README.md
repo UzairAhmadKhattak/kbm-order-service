@@ -7,6 +7,8 @@ This project outlines a scalable AWS architecture for deploying a web applicatio
 ## Architecture Diagram
 The architecture is divided into a VPC with private and public subnets across an Availability Zone.
 
+![Alt](./kbm-arc.png)
+
 ### Components
 - **VPC**: The entire infrastructure is hosted within a Virtual Private Cloud (VPC) for network isolation.
 - **Private Subnet**:
